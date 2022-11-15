@@ -1,2 +1,3 @@
 # Group-3-mates
-Welcome
+
+Welcome to our repository >:)
