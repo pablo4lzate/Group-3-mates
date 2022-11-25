@@ -14,15 +14,6 @@ category_description varchar(255),
 PRIMARY KEY (category_id)
 );
 
--- Create "Product_categores" table:
-CREATE TABLE IF NOT EXISTS Product_categories (
-product_id int not null,
-category_id int not null,
-FOREIGN KEY (product_id) REFERENCES  products (product_id),
-FOREIGN KEY (category_id) REFERENCES categories (category_id),
-PRIMARY KEY (product_id)
-);
-
 -- Create "products" table:
 CREATE TABLE IF NOT EXISTS Products (
 product_id int not null auto_increment,
@@ -32,6 +23,26 @@ product_price varchar(255) not null,
 product_status varchar(255) not null,
 PRIMARY KEY (product_id)
 );
+
+-- Create "users" table:
+CREATE TABLE IF NOT EXISTS Users (
+user_id int not null auto_increment,
+user_role varchar(256) not null,
+user_name varchar(256) not null,
+user_email varchar(256) not null,
+user_password varchar(256) not null,
+primary key (user_id)
+);
+
+-- Create "Product_categores" table:
+CREATE TABLE IF NOT EXISTS Product_categories (
+product_id int not null,
+category_id int not null,
+FOREIGN KEY (product_id) REFERENCES  products (product_id),
+FOREIGN KEY (category_id) REFERENCES categories (category_id),
+PRIMARY KEY (product_id)
+);
+
 
 -- Create "shopping_cart_items" table:
 CREATE TABLE IF NOT EXISTS Shopping_cart_items (
@@ -44,15 +55,6 @@ FOREIGN KEY (product_id) REFERENCES products (product_id),
 primary key (product_options)
 );
 
--- Create "users" table:
-CREATE TABLE IF NOT EXISTS Users (
-user_id int not null auto_increment,
-user_role varchar(256) not null,
-user_name varchar(256) not null,
-user_email varchar(256) not null,
-user_password varchar(256) not null,
-primary key (user_id)
-);
 
 -- Create "orders" table:
 CREATE TABLE IF NOT EXISTS Orders (
